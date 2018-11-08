@@ -84,3 +84,45 @@ console.log("4 squared is: " + squared(4));
 
 var result = squared(10);
 console.log(result);
+
+function isEven(x) {
+    if (x % 2 === 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+console.log(isEven(2));
+
+function kebabToSnake(str) {
+    var myString = str.replace(/([a-z])/g, "yeet"); // Changes all letters to yeet
+
+    return myString
+}
+
+console.log(kebabToSnake("he-y"));
+
+function localScope() {
+    var showScope = 31;
+    console.log(showScope)
+}
+
+localScope();
+console.log(showScope); // går inte
+
+var showScope = "Im a global variable";
+
+console.log(showScope);
+
+var showScopeY = 99;
+
+function localScopeY() {
+    showScopeY = 100;
+    console.log(showScopeY);
+}
+
+console.log(showScopeY);
+localScopeY();
+console.log(showScopeY);
