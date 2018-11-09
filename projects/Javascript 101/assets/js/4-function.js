@@ -126,3 +126,36 @@ function localScopeY() {
 console.log(showScopeY);
 localScopeY();
 console.log(showScopeY);
+
+function sing() {
+    console.log("Hit or miss, i guess they never miss, huh")
+    console.log("Yeet, yeet yeet, yeet")
+}
+
+// setInterval(sing, 2500);
+
+// var anon = setInterval(function() {
+//     console.log("I'm anomaly xd")
+// }, 3000);
+
+function myTimer() {
+    var d = new Date();
+    document.getElementById("output").innerHTML = d.toLocaleTimeString();
+}
+
+myTimer();
+
+var myTime = setInterval(myTimer, 1000);
+
+document.getElementsByTagName("button")[0].addEventListener("mousedown", function() {
+    clearInterval(myTime);
+    
+});
+
+document.querySelector("button").addEventListener("mouseup", function() {
+   myTime = setInterval(myTimer, 1000);
+});
+
+// document.getElementsByTagName("button")[0].addEventListener("dblclick", function() {
+//     setInterval(myTimer, 1000);
+// });
