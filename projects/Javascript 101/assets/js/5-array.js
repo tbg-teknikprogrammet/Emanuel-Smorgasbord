@@ -11,7 +11,6 @@ var colours = ["Red", "Green", "Blue"];
 var colors = new Array();
 
 //push() - Lägga till en grej till en array
-
 colours.push("Magneta");
 console.log(colours);
 
@@ -61,10 +60,9 @@ countries.forEach(countryList);
 
 
 
-
 function printReverse(thisArray) {
     for(var i = thisArray.length -1; i >= 0; i--) {
-        console.log(thisArray[i]);
+        // console.log(thisArray[i]);
     }
 }
 
@@ -74,11 +72,27 @@ function isIdentical(anotherArr) {
     var what = [1,0,1,1];
     for(var i = 0; i < anotherArr.length; i++) {
         if(what === anotherArr) {
-            console.log("True")
+            // console.log("True")
         }
         else {
-            console.log("False")
+            // console.log("False")
         }
     }
 }
 
+
+
+function sumArray(answer) {
+    for(var i = 0; i < sumArray.length; i++) {
+        if(answer ==! sumArray.length) {
+            answer = sumArray[i] + 3310
+        }
+        else {
+            // nothing
+        }
+        return answer;
+    }
+      
+}
+
+sumArray([1,9,327,1000]);
