@@ -80,19 +80,17 @@ function isIdentical(anotherArr) {
     }
 }
 
+// sumArray
 
+function sumArray(ArrAnswer) {
+    var sum = 0
 
-function sumArray(answer) {
-    for(var i = 0; i < sumArray.length; i++) {
-        if(answer ==! sumArray.length) {
-            answer = sumArray[i] + 3310
-        }
-        else {
-            // nothing
-        }
-        return answer;
+    for(var i = 0; i < ArrAnswer.length; i++) {
+        sum += ArrAnswer[i];
     }
-      
+    console.log(sum)
+    return sum;
 }
 
 sumArray([1,9,327,1000]);
+
