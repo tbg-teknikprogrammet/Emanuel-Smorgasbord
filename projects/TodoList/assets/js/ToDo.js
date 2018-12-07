@@ -5,30 +5,35 @@ var ToDoList = []
 
 function List() {
 
-    var putin = 0;
+        var putin = 0;
      
-        while(putin != "q" || putin != "Q") {
+        while(putin != "q" || putin != "Q") { // Do while the q button is not pressed
 
-            putin = prompt("Vad vill du göra?")
+            putin = prompt("Vad vill du göra?");
 
             if(putin == "L" || putin == "l") {
-                console.log(ToDoList) // Visar listan
-                // prompt(ToDoLista.length)
+                console.log(ToDoList)
+                // for(var i = 0; i <= ToDoList.length; i++) {
+                //     console.log(ToDoList)
+                // }
              }  
              
              else if(putin == "N" || putin == "n") {
-                 ToDoList.push(" "); //Lägger till, till listan
-                 console.log(ToDoList)
+                 var addNew = prompt("Write something to add to the list")
+                 ToDoList.push(addNew); // Add thing to the array
+                 console.log("You added " + addNew + " to the list!")
              }
              
              else if(putin == "R" || putin == "r") {
-                 ToDoList.slice() // Tar bort från listan
-                 console.log(ToDoList)
-                 prompt(ToDoList)
-             }
-    
-            //  else if(putin != "q" || putin != "Q")
-            //     break;
+                 var removeIt = Number(prompt("Write a number to remove from the list"))
+                 
+                    ToDoList.splice(removeIt, 1) // Remove a chosen item from the list
+                    console.log(ToDoList)
+                 }
+                   
+             else if(putin == "q" || putin == "Q") 
+                break;
         }
-      
+        if(putin == "q" || putin == "Q")
+            console.log("Shutdown")
 }
