@@ -89,3 +89,27 @@ for(var i = 0; i < books.length; i++) {
 }
 
 
+var movies = [
+    { // Movie 0
+        Name: "Lord Of The Rings",
+        Rating: "10/10",
+        HasWatched: "You have seen ", 
+    }, 
+    { // Movie 1
+        Name: "Star Wars III", 
+        Rating: "Hello there/10",
+        HasWatched: "You have not seen",
+    },
+    { // Movie 2
+        Name: "Overwatch Stories", 
+        Rating: "9.5/10",
+        HasWatched: "You have seen ",
+    },
+    { // Movie 3
+        Name: "Bee Moive", 
+        Rating: "11/10",
+        HasWatched: "You have seen",
+    }
+];
+
+movies();

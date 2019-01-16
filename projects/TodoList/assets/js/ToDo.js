@@ -25,15 +25,15 @@ function List() {
              }
              
              else if(putin == "R" || putin == "r") {
-                 var removeIt = Number(prompt("Write a number to remove from the list"))
+                    var removeIt = Number(prompt("Write a number to remove from the list"))
                  
                     ToDoList.splice(removeIt, 1) // Remove a chosen item from the list
                     console.log(ToDoList)
                  }
                    
-             else if(putin == "q" || putin == "Q") 
+             else if(putin == "q" || putin == "Q") // Stops the loop, basically cancel the action if you for example pressed "n"
                 break;
         }
-        if(putin == "q" || putin == "Q")
-            console.log("Shutdown")
+        if(putin == "q" || putin == "Q") // Quit the prompt
+            console.log("Closing...")
 }
