@@ -88,28 +88,42 @@ for(var i = 0; i < books.length; i++) {
     console.log(books[i].title, books[i].author, books[i].comments);
 }
 
-
 var movies = [
     { // Movie 0
         Name: "Lord Of The Rings",
         Rating: "10/10",
-        HasWatched: "You have seen ", 
+        HasWatched: true, 
     }, 
     { // Movie 1
         Name: "Star Wars III", 
         Rating: "Hello there/10",
-        HasWatched: "You have not seen",
+        HasWatched: true,
     },
     { // Movie 2
         Name: "Overwatch Stories", 
         Rating: "9.5/10",
-        HasWatched: "You have seen ",
+        HasWatched: false,
     },
     { // Movie 3
         Name: "Bee Moive", 
         Rating: "11/10",
-        HasWatched: "You have seen",
+        HasWatched: true,
     }
 ];
 
-movies();
+movies.forEach(function(allMovies) {
+    // can i use a for?
+    if(movies.HasWatched == true) {
+        console.log("- You have watched "); // What should i put here to make haswatched to "you have watched"?
+    }
+    else
+        console.log("- You have not watched "); // Same as above
+
+    console.log(allMovies);
+});
+
+// function movieList(allMovies) {
+//     console.log(allMovies)
+// }
+
+// movieList();
