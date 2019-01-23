@@ -84,9 +84,9 @@ var books = [
 // array[index].objectProperty[index]
 // console.log(books[1].comments[0]) // "This book is epic!"
 
-for(var i = 0; i < books.length; i++) {
-    console.log(books[i].title, books[i].author, books[i].comments);
-}
+// for(var i = 0; i < books.length; i++) {
+//     console.log(books[i].title, books[i].author, books[i].comments);
+// }
 
 var movies = [
     { // Movie 0
@@ -111,19 +111,12 @@ var movies = [
     }
 ];
 
-movies.forEach(function(allMovies) {
-    // can i use a for?
+function MovieDB(movies) {
     if(movies.HasWatched == true) {
-        console.log("- You have watched "); // What should i put here to make haswatched to "you have watched"?
+        console.log("- You have watched " + movies.Name + " [" + movies.Rating + "]");
     }
     else
-        console.log("- You have not watched "); // Same as above
+        console.log("- You have not watched " + movies.Name + " [" + movies.Rating + "]");
+}
 
-    console.log(allMovies);
-});
-
-// function movieList(allMovies) {
-//     console.log(allMovies)
-// }
-
-// movieList();
+movies.forEach(MovieDB);
