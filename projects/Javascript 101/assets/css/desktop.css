@@ -1,1 +1,23 @@
 @charset "utf-8";
+
+body {
+    background: #29282c;
+    color: #519ddf;
+}
+
+.some-class {
+    color: aliceblue;
+    letter-spacing: 5px;
+    transform: rotate(180deg);
+    font-style: italic;
+}
+
+.anotherClass {
+    color: gray
+    
+}
+
+.anotherClass:hover {
+    font-size: 20px;
+    color: yellow;
+}
