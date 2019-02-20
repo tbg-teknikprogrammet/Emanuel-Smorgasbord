@@ -1,18 +1,20 @@
 // Events n stuffs
 // eventlistener( event, function, true/false) too meny
 
+
+// select
 var btn = document.querySelector("button");
 
+// manipulate
 btn.addEventListener("click", function(){
-    setTimeout(function() {
-        document.querySelector("p").innerHTML = "You clicked me! :D";
-    }, 1000);
+    document.querySelector("span").innerHTML = "<strong>:)</strong>"; // change <span>
 });
 
 //select
 var lis = document.querySelectorAll("li");
 
 //manipulate
+
 // lis[0].addEventListener("click", function() {
 //     lis[0].style.textDecoration = "line-through"
 // })
@@ -37,7 +39,7 @@ var isBlue = false;
 btnToggle.addEventListener("click", function() {
     setInterval(function() {
         document.getElementsByTagName("body")[0].classList.toggle("toggleBg")
-    }, 100);
+    }, 200);
    
     // if(isBlue) {
     //     document.getElementsByTagName("body")[0].style.background = "#29282c";

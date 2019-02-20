@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+body {
+    margin: 30px;
+    background-color: rgb(107, 107, 107);
+}
+
+.userInp {
+    width: 10%;
+    height: 20px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+input {
+    margin-bottom: 10px;
+}
