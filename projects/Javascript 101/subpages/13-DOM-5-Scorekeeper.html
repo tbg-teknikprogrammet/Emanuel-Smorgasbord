@@ -7,21 +7,22 @@
     <title>Creeeper, oh man!</title>
 </head>
     <body>
-        <section class="Score">
-            <h1><span id="Sc-one">0</span> VS <span id="Sc-two">0</span></h1>
-        </section>
         <section>
-            <p>Playing to <span id="PlayingTo">0</span></p>
-            <input type="number" class="userInp" min="0" max="10">
-        </section>
-        <section>
-            <button id="P1">Player 1</button>
-            <button id="P2">Player 2</button>
-            <button>Reset</button>
-        </section>
+            <section class="Score">
+                    <h1><span id="Sc-one">0</span> VS <span id="Sc-two">0</span></h1>
+            </section>
 
+                    <p class="PlayingtoCSS">Playing to:<span id="PlayingTo">1</span></p>
+                    <input type="number" class="userInp" min="1" max="10">
+
+            <section class="Players">
+                <button id="P1">Player 1</button>
+                <button id="P2">Player 2</button>
+                <button class="RS">Reset</button>
+            </section>
             <p id=Wining-text></p>
-
-    <script src="../assets/js/13-DOM-5-Scorekeeper.js"></script>
+        </section>
+        
+        <script src="../assets/js/13-DOM-5-Scorekeeper.js"></script>
     </body>
 </html>

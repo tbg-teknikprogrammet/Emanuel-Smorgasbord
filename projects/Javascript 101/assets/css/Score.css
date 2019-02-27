@@ -1,13 +1,31 @@
 @charset "utf-8";
 
 body {
+    display: flex;
+    justify-content: center;
     margin: 30px;
-    background-color: rgb(107, 107, 107);
+    background-color: #6b6b6b;
 }
 
 .userInp {
-    width: 10%;
-    height: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    padding-left: 16px;
+    width: 50px;
+    height: 40px;
+    font-size: 18px;
+}
+
+.PlayingToCSS {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+
+}
+
+#PlayingTo {
+    margin-left: 5px; 
 }
 
 h1 {
@@ -16,4 +34,34 @@ h1 {
 
 input {
     margin-bottom: 10px;
+}
+
+#Wining-text {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: yellow;
+}
+
+.ColorWin {
+    color: #51ff2e;
+}
+
+.ColorLose {
+    color: red;
+}
+
+.Score {
+    display: flex;
+    justify-content: center;
+}
+
+.Play2 {
+    display: flex;
+    justify-content: center;
+}
+
+.Players {
+    display: flex;
+    justify-content: center;
 }
