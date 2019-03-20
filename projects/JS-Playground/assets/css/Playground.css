@@ -13,6 +13,10 @@ section {
     border: 1px solid #ffffff;
 }
 
+section div img {
+    position: relative;
+}
+
 section img {
     height: 95%;
     width: 95%;

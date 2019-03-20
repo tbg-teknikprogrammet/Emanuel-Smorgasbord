@@ -1,5 +1,6 @@
 var BigImageClass = document.querySelector(".BigLightBox");
-var 
+var SlideNum = 0;
+var SlideArr = ["assets/images/overwatch.jpeg","assets/images/mountains.jpg","assets/images/mountains2.png"]
 
 var OnImageClick = document.querySelector(".LittleImage");
 
