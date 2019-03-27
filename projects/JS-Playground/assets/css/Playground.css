@@ -13,11 +13,7 @@ section {
     border: 1px solid #ffffff;
 }
 
-section div img {
-    position: relative;
-}
-
-section img {
+.LittleImage {
     height: 95%;
     width: 95%;
     display: block;
@@ -46,22 +42,46 @@ section img {
     height: 80%;
 }
 
-/* .Slideshow {
-    background-color: green;
+.Slideshow {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.Slides {
+    top: 5%;
+    z-index: 5;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 23px;
+    width: 90%;
+    height: 100%;
+
+}
+
+.slide-right {
+    z-index: 10;
+}
+
+.slide-left {
+    z-index: 10;
+    justify-content: left;
 }
 
 .Lightbox {
-    background-color: #4f65df;
+    padding-bottom: 5px; 
 }
-
+/* 
 .sec3 {
     background-color: #d900ec;
 }
 
 .sec4 {
-    background-color: #a5300d;
+    height: 300px;
 }
-
+*/
+/*
 .sec5 {
     background-color: #cccf00;
 }
@@ -72,6 +92,6 @@ section img {
 
 
 
-section img:hover {
+.BIGme2:hover {
     box-shadow: 1px 1px 7px black;
 }
