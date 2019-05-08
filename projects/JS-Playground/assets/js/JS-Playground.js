@@ -13,57 +13,82 @@ OnBigImageClick.addEventListener("click", function() {
 });
 
 // Sliderino
-var SlideNum = 1;
-var ImageOne = "assets/images/mountains.jpg";
-var ImageTwo = "assets/images/mountains2.png";
-var ImageThree = "assets/images/mountains3.png";
+var SlideNum = 2;
+var ImageOne = document.getElementsByTagName("img")[1];
+var ImageTwo = document.getElementsByTagName("img")[2];
+var ImageThree = document.getElementsByTagName("img")[3];
+
 
 var ButtonRight = document.querySelector(".slide-right"); // Select
 ButtonRight.addEventListener("click", function() { // Manipulate
-    SlideNum++;
+    SlideNum++; // Adds numbers to SlideNum so that the if's work
+
+    if(SlideNum > 3) {
+        SlideNum = 1;
+    }
+    SlideFunc();
 });
 
 var ButtonLeft = document.querySelector(".slide-left"); // Select
 ButtonLeft.addEventListener("click", function() { // Manipulate
     SlideNum--;
+
+    if(SlideNum < 1) {
+        SlideNum = 3;
+    }
+    SlideFunc();
 });
 
-if(SlideNum = 1) {
-    ImageTwo.visibility = "hidden";
-    ImageThree.visibility = "hidden";
-} 
+function SlideFunc() {
+    if(SlideNum == 1) { // The if's where all pictures except one is visible depending on "SlideNum"
+        ImageOne.style.visibility = "visible"; // Visible
+        ImageTwo.style.visibility = "hidden";
+        ImageThree.style.visibility = "hidden";
+    } 
 
-else if(SlideNum = 2) {
-    ImageOne.style.visibility = "hidden";
-    ImageThree.visibility = "hidden";
+    else if(SlideNum == 2) {
+        ImageOne.style.visibility = "hidden";
+        ImageTwo.style.visibility = "visible"; // Visible
+        ImageThree.style.visibility = "hidden";
+    }
+
+    else if(SlideNum == 3) {
+        ImageOne.style.visibility = "hidden";
+        ImageTwo.style.visibility = "hidden";
+        ImageThree.style.visibility = "visible"; // Visible
+    }
 }
 
-else if(SlideNum = 3) {
-    ImageOne.visibility = "hidden";
-    ImageTwo.visibility = "hidden";
-}
 
-// Color changing button
-
-document.addEventListener("keydown", function(event) { // Listens to button press
+// Color changing button 
+document.addEventListener("keydown", function(event) { // Listens to a button press
     if(event.which == 67) { // If the button is c, do something
-        document.querySelector(".sec3").style.backgroundColor = "#eb1f1f";
+        document.querySelector(".sec3").style.backgroundColor = "#eb1f1f"; // .sec3 gets the color red when c is pressed
     }
     else if(event.which == 66) {
         document.querySelector(".sec3").style.backgroundColor = "#3ad31c"; // Green
     }
 
-    else if(event.which == 65) {
+    else if(event.which == 65) { // Attempt for a button that changes colors automatically
         document.addEventListener("keydown", function() {
             setInterval(function() {
-                document.getElementsByTagName("body")[0].classList.toggle("toggleBg")
-            }, 200);
+                document.getElementsByTagName("body").classList.toggle("toggleBg") // toggleBg is the class that adds the color
+            }, 200); // <-- does this work?
         });
     }
 
     else {
-        document.querySelector(".sec3").style.backgroundColor = "#302e2e";
+        document.querySelector(".sec3").style.backgroundColor = "#302e2e"; // Any other button is presed, return to normal
     }
   
+});
+
+// Clicker game?
+
+var Clicks = 0;
+var ClickButton = document.querySelector("TheClicker");
+ClickButton.addEventListener("click", function() {
+    Clicks++;
     
 });
+

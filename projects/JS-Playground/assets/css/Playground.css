@@ -3,10 +3,14 @@
 body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 100%;
+    grid-template-rows: 1fr 1fr;
     margin: 0;
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(4,3,60,1) 14%, rgba(5,5,79,1) 25%, rgba(7,7,101,1) 38%, rgba(8,8,109,1) 43%, rgba(8,8,114,1) 46%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
+}
+
+.toggleBg {
+    background: rgb(18, 8, 211); 
 }
 
 section {
@@ -31,9 +35,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     position: absolute;
-    height: 100%;
+    height: 105%;
     width: 100%;
     z-index: 100;
     background-color: rgba(46, 46, 46, 0.9);
@@ -99,14 +102,29 @@ section {
 
 .ColorBack {
     background-color: #302e2e;
-
-}
-
-/*
-.sec4 {
-    height: 300px;
 }
 */
+
+.sec4 {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.sec4 button {
+    height: 100px;
+    width: 200px;
+    font-size: 50px;
+    border-radius: 10px;
+    background-color: rgb(204, 3, 3);
+}
+
+.ClickText {
+    display: flex;
+    justify-content: baseline;
+    color: white;
+}
+
 /*
 .sec5 {
     background-color: #cccf00;
@@ -115,10 +133,6 @@ section {
 .sec6 {
     background-color: #1e01c5;
 } */
-
-.BIGme2:hover {
-    box-shadow: 1px 1px 7px black;
-}
 
 .slide-right:hover {
     background-color: #585858;
