@@ -86,9 +86,22 @@ document.addEventListener("keydown", function(event) { // Listens to a button pr
 // Clicker game?
 
 var Clicks = 0;
-var ClickButton = document.querySelector("TheClicker");
-ClickButton.addEventListener("click", function() {
-    Clicks++;
-    
-});
+var IsButton = false;
+var UpgradeButton = document.querySelector(".UpgradeButton");
 
+
+var ClickButton = document.querySelector(".TheClicker");
+ClickButton.addEventListener("click", function() {
+    if(IsButton == true) {
+        Clicks = Clicks + 1000;
+    } else {
+        Clicks++;
+    }
+    
+if(Clicks == 10) {
+    UpgradeButton.classList.remove("UpgradeButton");
+    UpgradeButton.classList.add("UpgradeButtonVisible");
+}
+   
+    document.querySelector(".Clicks").innerHTML = Clicks;
+});
