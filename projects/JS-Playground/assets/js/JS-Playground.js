@@ -86,22 +86,34 @@ document.addEventListener("keydown", function(event) { // Listens to a button pr
 // Clicker game?
 
 var Clicks = 0;
-var IsButton = false;
+var ButtonClicked = false;
 var UpgradeButton = document.querySelector(".UpgradeButton");
+do { // After Clicks is 10, a button will appear and if you click it, you get Clicks * 1000
+    UpgradeButton.addEventListener("click", function() {
+        ButtonClicked = true;
+        Clicks = Clicks - Clicks; // A small price to pay -Thanos
+        document.querySelector(".Clicks").innerHTML = Clicks; // Updates Clicks in html
+    });
+} while(Clicks >= 10);
 
+var UpgradeButton2 = document.querySelector(".UpgradeButton2");
 
 var ClickButton = document.querySelector(".TheClicker");
 ClickButton.addEventListener("click", function() {
-    if(IsButton == true) {
+    if(ButtonClicked == true) {
         Clicks = Clicks + 1000;
-    } else {
+        
+    } else
         Clicks++;
-    }
     
-if(Clicks == 10) {
+if(Clicks >= 10) { // Do something when Clicks are at 10
     UpgradeButton.classList.remove("UpgradeButton");
     UpgradeButton.classList.add("UpgradeButtonVisible");
+    
+} else if(Clicks >= 10000) { // Do something when Clicks are at 10´000
+    UpgradeButton2.classList.remove("UpgradeButton2");
+    UpgradeButton2.classList.add("UpgradeButtonVisible2");
+    // Win
 }
-   
     document.querySelector(".Clicks").innerHTML = Clicks;
 });
