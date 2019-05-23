@@ -59,7 +59,6 @@ function SlideFunc() {
     }
 }
 
-
 // Color changing button 
 document.addEventListener("keydown", function(event) { // Listens to a button press
     if(event.which == 67) { // If the button is C, do something
@@ -68,18 +67,17 @@ document.addEventListener("keydown", function(event) { // Listens to a button pr
     else if(event.which == 66) { // B
         document.querySelector(".sec3").style.backgroundColor = "#3ad31c";
     }
-
+    
     else if(event.which == 65) { // Attempt for "A" button that changes colors automatically
-        document.addEventListener("keydown", function() {
-            var Blinking = setInterval(function() {
-                document.getElementsByTagName("body")[0].classList.toggle("toggleBg") // toggleBg is the class that adds the color
-                if(event.which == 27) {
-                    alert("hej")
-                    clearInterval(Blinking);
-                }
-            }, 100);
-        });
-        
+        do {
+            var wow = document.addEventListener("keydown", function(event) {
+                setInterval(function() {
+                    document.getElementsByTagName("body")[0].classList.toggle("toggleBg") // toggleBg is the class that adds the color
+                }, 1000); 
+            });
+            if(wow.which == 27)
+                clearInterval();
+        } while(wow.which != 27);
     }
 
     else {
