@@ -13,7 +13,7 @@ OnBigImageClick.addEventListener("click", function() {
 });
 
 // Sliderino
-var SlideNum = 2;
+var SlideNum = 3;
 var ImageOne = document.getElementsByTagName("img")[1];
 var ImageTwo = document.getElementsByTagName("img")[2];
 var ImageThree = document.getElementsByTagName("img")[3];
@@ -62,19 +62,24 @@ function SlideFunc() {
 
 // Color changing button 
 document.addEventListener("keydown", function(event) { // Listens to a button press
-    if(event.which == 67) { // If the button is c, do something
+    if(event.which == 67) { // If the button is C, do something
         document.querySelector(".sec3").style.backgroundColor = "#eb1f1f"; // .sec3 gets the color red when c is pressed
     }
-    else if(event.which == 66) {
-        document.querySelector(".sec3").style.backgroundColor = "#3ad31c"; // Green
+    else if(event.which == 66) { // B
+        document.querySelector(".sec3").style.backgroundColor = "#3ad31c";
     }
 
-    else if(event.which == 65) { // Attempt for a button that changes colors automatically
+    else if(event.which == 65) { // Attempt for "A" button that changes colors automatically
         document.addEventListener("keydown", function() {
-            setInterval(function() {
-                document.getElementsByTagName("body").classList.toggle("toggleBg") // toggleBg is the class that adds the color
-            }, 200); // <-- does this work?
+            var Blinking = setInterval(function() {
+                document.getElementsByTagName("body")[0].classList.toggle("toggleBg") // toggleBg is the class that adds the color
+                if(event.which == 27) {
+                    alert("hej")
+                    clearInterval(Blinking);
+                }
+            }, 100);
         });
+        
     }
 
     else {
@@ -88,7 +93,10 @@ document.addEventListener("keydown", function(event) { // Listens to a button pr
 var Clicks = 0;
 var ButtonClicked = false;
 var UpgradeButton = document.querySelector(".UpgradeButton");
-do { // After Clicks is 10, a button will appear and if you click it, you get Clicks * 1000
+var UpgradeButton2 = document.querySelector(".UpgradeButton2");
+var ClickButton = document.querySelector(".TheClicker");
+var ClickerWin = document.querySelector(".ClickerWin");
+do { // After Clicks is 10, a button will appear and if you click it, you get Clicks * 1000 // Kom på do whilen själv, kände mig ganska smart
     UpgradeButton.addEventListener("click", function() {
         ButtonClicked = true;
         Clicks = Clicks - Clicks; // A small price to pay -Thanos
@@ -96,24 +104,24 @@ do { // After Clicks is 10, a button will appear and if you click it, you get Cl
     });
 } while(Clicks >= 10);
 
-var UpgradeButton2 = document.querySelector(".UpgradeButton2");
-
-var ClickButton = document.querySelector(".TheClicker");
-ClickButton.addEventListener("click", function() {
+ClickButton.addEventListener("click", function() { // Satt fast och kom på hela lösningen själv, kände mig ganska smart
     if(ButtonClicked == true) {
-        Clicks = Clicks + 1000;
-        
+        Clicks = Clicks + 1000;    
     } else
         Clicks++;
     
-if(Clicks >= 10) { // Do something when Clicks are at 10
+if(Clicks >= 10 && Clicks <= 11) { // Do something when Clicks are at 10
     UpgradeButton.classList.remove("UpgradeButton");
     UpgradeButton.classList.add("UpgradeButtonVisible");
     
-} else if(Clicks >= 10000) { // Do something when Clicks are at 10´000
+} else if(Clicks >= 100000) { // Win when you have clicked 100 000 times
     UpgradeButton2.classList.remove("UpgradeButton2");
     UpgradeButton2.classList.add("UpgradeButtonVisible2");
-    // Win
+  
 }
     document.querySelector(".Clicks").innerHTML = Clicks;
+});
+
+UpgradeButton2.addEventListener("click", function() {
+    ClickerWin.style.visibility = "visible";
 });

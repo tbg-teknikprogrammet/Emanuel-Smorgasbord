@@ -9,10 +9,6 @@ body {
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(4,3,60,1) 14%, rgba(5,5,79,1) 25%, rgba(7,7,101,1) 38%, rgba(8,8,109,1) 43%, rgba(8,8,114,1) 46%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
 }
 
-.toggleBg {
-    background: rgb(18, 8, 211); 
-}
-
 body section {
     border: 1px solid #ffffff;
 }
@@ -91,6 +87,11 @@ body section {
     justify-content: center;
     align-items: center;
 }
+
+.toggleBg {
+    background: rgb(202, 214, 27); 
+}
+
 /* 
 .ColorRed {
     background-color: #eb1f1f;
@@ -112,9 +113,8 @@ body section {
 }
 
 .ClickingButtons {
-    border: 1px solid black;
-    /* display: flex; */
-    /* flex-direction: row-reverse; */
+    display: flex;
+    justify-content: center;
     height: 100%;
     width: 100%;
 }
@@ -124,13 +124,14 @@ body section {
     width: 200px;
     font-size: 50px;
     border-radius: 10px;
+    border: 3px solid white;
     margin: 0 auto;
     background-color: rgb(204, 3, 3);
 }
 
 .UpgradeButton {
     visibility: hidden;
-    background-color: #14ce14;
+    margin-right: 10px;
     height: 50px;
     width: 100px;
 }
@@ -138,19 +139,23 @@ body section {
 .UpgradeButtonVisible {
     visibility: visible;
     background-color: #14ce14;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-right: 10px;
     height: 50px;
     width: 100px;
 }
 
 .UpgradeButton2 {
     visibility: hidden;
-    background-color: #8c0191;
     height: 50px;
     width: 100px;
 }
 .UpgradeButtonVisible2 {
     visibility: visible;
-    background-color: #8c0191;
+    background-color: #ceaf01;
+    border: 2px solid white;
+    border-radius: 5px;
     height: 50px;
     width: 100px;
 }
@@ -162,6 +167,18 @@ body section {
     margin: 0 auto;
     width: 100%;
     color: white;
+}
+
+.ClickerWin {
+    visibility: hidden;
+    position: absolute;
+    height: 317.1px;
+    width: 418px;
+}
+.ClickerWinVisible {
+    position: absolute;
+    height: 315px;
+    width: 418px;
 }
 
 /*
