@@ -162,6 +162,7 @@ body section {
 
 .ClickText {
     display: flex;
+    font-family: Arial;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -181,14 +182,117 @@ body section {
     width: 418px;
 }
 
-/*
-.sec5 {
-    background-color: #cccf00;
+
+/* .sec5 {
+    display: flex;   
+} */
+/*------------------- Scorekeeper -----------------------*/
+
+.userInp {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    padding-left: 16px;
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
 }
 
+.PlayingToCSSParent {
+    display: flex;
+    justify-content: center;
+}
+
+.PlayingToCSS {
+    color: white;
+    font-size: 20px;
+}
+
+#PlayingTo {
+    margin-left: 5px; 
+}
+
+h1 {
+    font-size: 40px;
+    height: 10px;
+    color: #d8d8d8;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.ColorWin {
+    color: #51ff2e;
+}
+
+.ColorLose {
+    color: red;
+}
+
+.Score {
+    display: flex;
+    justify-content: center;
+}
+
+.Play2 {
+    display: flex;
+    justify-content: center;
+}
+
+.Players {
+    display: flex;
+    justify-content: center;
+}
+
+.Players button {
+    background-color: #4bcc00;
+    color: black;
+    border: 2px solid #fff;
+    border-radius: 1px;
+    font-size: 15px;
+    margin: 2px;
+}
+
+#Wining-text {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    color: yellow;
+}
+/*------------------------------------------*/
+
 .sec6 {
-    background-color: #1e01c5;
-} */
+    display: grid;
+}
+
+.VideoDiv {
+    display: flex;
+    align-items: center;
+
+}
+
+video {
+    align-items: center;
+    height: 50%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.VideoTools {
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.VideoTools button {
+    margin: 0 auto;
+    height: 22px;
+    width: 70%;
+    background-color: #d7e0e2;
+    border: 0px;
+}
 
 .slide-right:hover {
     background-color: #585858;
@@ -196,4 +300,12 @@ body section {
 
 .slide-left:hover {
     background-color: #585858;
+}
+
+.VideoTools button:hover {
+    margin: 0 auto;
+    height: 22px;
+    width: 70%;
+    background-color: #fff;
+    border: 0px;
 }

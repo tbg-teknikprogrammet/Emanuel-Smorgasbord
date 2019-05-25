@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="assets/css/Playground.css">
     <title>JS Playground</title>
 </head>
-<body>
-    
+<body> 
     <div class="BigLightBox">
         <img src="assets/images/me.PNG" class="BIGme2" alt="me">
     </div>
-
     <!-- \/ Items \/ -->
     <section class="Slideshow">
         <button class="slide-right">&#10094;</button>
@@ -42,14 +40,34 @@
         <button class="TheClicker">👆</button>
         <div class="ClickingButtons">
             <button class="UpgradeButton"><strong>x1000</strong></button>
-            <button class="UpgradeButton2">Win?</button>
+            <button class="UpgradeButton2">Win?</button> <!-- Should've been something like: "WinButton" -->
         </div>        
     </section>
     <section class="sec5">
+            <div class="Score">
+                <h1><span id="Sc-one">0</span> VS <span id="Sc-two">0</span></h1>
+            </div>
+            <div class="PlayingToCSSParent">
+                <p class="PlayingToCSS">Playing to:<span id="PlayingTo">1</span></p>
+            </div>
+            <input type="number" class="userInp" min="1" max="10">
 
+            <div class="Players">
+                <button id="P1">Player 1</button>
+                <button id="P2">Player 2</button>
+                <button class="RS">Reset</button>
+            </div>
+            <p id=Wining-text></p>
     </section>
     <section class="sec6">
-        
+        <div class="VideoDiv">
+            <video class="VideoPlayer" src="assets/videos/hellothere.mp4"></video>
+        </div>
+        <div class="VideoTools">
+            <button>Play/Pause</button>
+            <button>Bigger</button>
+            <button>Spin?</button>
+        </div>    
     </section>
     <!-- /\ Items /\ -->
 
