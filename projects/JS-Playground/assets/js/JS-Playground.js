@@ -59,8 +59,14 @@ function SlideFunc() {
     }
 }
 
-// Color changing button 
-document.addEventListener("keydown", function(event) { // Listens to a button press
+// Color changing buttons 
+var ColorLoop
+function thisfunc() {
+    ColorLoop = setInterval(function() {
+        document.getElementsByTagName("body")[0].classList.toggle("toggleBg");// toggleBg is the class that adds the color
+    }, 300);
+}
+document.addEventListener("keydown", function() { // Listens to a button press through the whole page
     if(event.which == 67) { // If the button is C, do something
         document.querySelector(".sec3").style.backgroundColor = "#eb1f1f"; // .sec3 gets the color red when c is pressed
     }
@@ -68,19 +74,19 @@ document.addEventListener("keydown", function(event) { // Listens to a button pr
         document.querySelector(".sec3").style.backgroundColor = "#3ad31c";
     }
     else if(event.which == 65) { // Attempt for "A" button that changes colors automatically
-        var j = setInterval(function() {
-            document.getElementsByTagName("body")[0].classList.toggle("toggleBg") // toggleBg is the class that adds the color
-        }, 1000);  
-        if(event.which == 27) { // This never runs.
-            alert("You pressed: esc");
-            clearInterval(j); // I gave up...
-        }      
+       thisfunc(); // Dont press "A" twice..
     }
     else {
         document.querySelector(".sec3").style.backgroundColor = "#302e2e"; // Any other button is presed, return to normal
-        clearInterval(j);
+    }  
+    if(event.which == 27) {
+        // alert("You pressed: esc");
+        clearInterval(ColorLoop);
+        document.getElementsByTagName("body")[0].classList.remove("toggleBg");
     }  
 });
+
+
 
 // Clicker game?
 var Clicks = 0;
@@ -197,6 +203,7 @@ BtnReset.addEventListener("click", function() { // Manipulate
 
 
 // VIDEO PLAYER -------------------------
+
 // Play/pause
 var HelloThere = document.getElementsByClassName("VideoPlayer")[0];
 var PlayOrPause = document.getElementsByClassName("Tool1")[0];
@@ -239,13 +246,13 @@ VolumeControll.addEventListener("click", function() {
 
     }
 });
-
+// Moving the video?
 function MovingVideo() {
     var position = 0;
     var AnimatedVideo = document.querySelector(".VideoPlayer");
     var Animation = setInterval(frame, 5);
     function frame() {
-        if(position == 100) {
+        if(position == 10) {
             clearInterval(Animation);
         } else {
             position++;
@@ -254,8 +261,7 @@ function MovingVideo() {
         }
     }
 }
-
-var Animate = document.getElementsByClassName("Tool4")[0]; //?
+var Animate = document.getElementsByClassName("Tool4")[0];
 Animate.addEventListener("click", function() {
     MovingVideo()
 });
