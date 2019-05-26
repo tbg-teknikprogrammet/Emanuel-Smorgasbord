@@ -89,7 +89,7 @@ body section {
 }
 
 .toggleBg {
-    background: rgb(202, 214, 27); 
+    background: #1d1d1d; 
 }
 
 /* 
@@ -269,21 +269,23 @@ input {
 .VideoDiv {
     display: flex;
     align-items: center;
-
 }
 
 video {
     align-items: center;
     height: 50%;
-    width: 90%;
+    width: 400px;
     margin: 0 auto;
 }
 
 .VideoTools {
-    margin-bottom: 10px;
+    width: 30%;
+    position: absolute;
     display: grid;
+    bottom: 1px;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
 }
 
 .VideoTools button {

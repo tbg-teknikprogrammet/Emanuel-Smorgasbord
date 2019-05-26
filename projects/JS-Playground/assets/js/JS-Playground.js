@@ -94,12 +94,15 @@ do { // After Clicks is 10, a button will appear and if you click it, you get Cl
         ButtonClicked = true;
         Clicks = Clicks - Clicks; // A small price to pay -Thanos
         document.querySelector(".Clicks").innerHTML = Clicks; // Updates Clicks in html
+        UpgradeButton.style.visibility = "hidden";
+        
     });
 } while(Clicks >= 10);
 
 ClickButton.addEventListener("click", function() { // Satt fast och kom på hela lösningen själv, kände mig ganska smart
     if(ButtonClicked == true) {
-        Clicks = Clicks + 1000;    
+        Clicks = Clicks + 1000;  
+        document.querySelector(".addQuestionMark").innerHTML = "???";  
     } else
         Clicks++;
     
@@ -191,3 +194,74 @@ BtnReset.addEventListener("click", function() { // Manipulate
 });
 //**********************
 //------------------------------------------------------------------------------------
+
+
+// VIDEO PLAYER -------------------------
+// Play/pause
+var HelloThere = document.getElementsByClassName("VideoPlayer")[0];
+var PlayOrPause = document.getElementsByClassName("Tool1")[0];
+var IsPaused = true;
+PlayOrPause.addEventListener("click", function() {
+    if(IsPaused == true) {
+        HelloThere.play();
+        IsPaused = false;
+        document.querySelector(".Tool1").innerHTML = "Pause";
+    } else if(IsPaused == false) {
+        HelloThere.pause();
+        IsPaused = true;
+        document.querySelector(".Tool1").innerHTML = "Play";
+    }   
+});
+// Size
+var ScaleVideo = document.getElementsByClassName("Tool2")[0];
+var IsBig = true;
+ScaleVideo.addEventListener("click", function() {
+    if(IsBig == true) {
+        HelloThere.style.width = "200px";
+        IsBig = false;
+    } else if(IsBig == false) {
+        HelloThere.style.width = "400px";
+        IsBig = true;
+    }
+});
+// Volume
+var VolumeControll = document.getElementsByClassName("Tool3")[0];
+var IsVolumeOn = true;
+VolumeControll.addEventListener("click", function() {
+    if(IsVolumeOn == true) {
+        HelloThere.volume = 0;
+        IsVolumeOn = false;
+        document.querySelector(".Tool3").innerHTML = "Unmute";
+    } else if(IsVolumeOn == false) {
+        HelloThere.volume = 1;
+        IsVolumeOn = true;
+        document.querySelector(".Tool3").innerHTML = "Mute";
+
+    }
+});
+
+function MovingVideo() {
+    var position = 0;
+    var AnimatedVideo = document.querySelector(".VideoPlayer");
+    var Animation = setInterval(frame, 5);
+    function frame() {
+        if(position == 100) {
+            clearInterval(Animation);
+        } else {
+            position++;
+            AnimatedVideo.style.top = position + "px";
+            AnimatedVideo.style.left = position + "px";
+        }
+    }
+}
+
+var Animate = document.getElementsByClassName("Tool4")[0]; //?
+Animate.addEventListener("click", function() {
+    MovingVideo()
+});
+    
+    
+
+
+
+
