@@ -61,34 +61,41 @@ function SlideFunc() {
 
 // Color changing buttons 
 var ColorLoop
+var PressedOnce = false;
 function thisfunc() {
     ColorLoop = setInterval(function() {
         document.getElementsByTagName("body")[0].classList.toggle("toggleBg");// toggleBg is the class that adds the color
+        document.getElementsByTagName("section").classList.toggle("toggleBorder");
     }, 300);
 }
-document.addEventListener("keydown", function() { // Listens to a button press through the whole page
-    if(event.which == 67) { // If the button is C, do something
-        document.querySelector(".sec3").style.backgroundColor = "#eb1f1f"; // .sec3 gets the color red when c is pressed
-    }
-    else if(event.which == 66) { // B
-        document.querySelector(".sec3").style.backgroundColor = "#3ad31c";
-    }
-    else if(event.which == 65) { // Attempt for "A" button that changes colors automatically
-       thisfunc(); // Dont press "A" twice..
-    }
-    else {
-        document.querySelector(".sec3").style.backgroundColor = "#302e2e"; // Any other button is presed, return to normal
-    }  
-    if(event.which == 27) {
-        // alert("You pressed: esc");
-        clearInterval(ColorLoop);
-        document.getElementsByTagName("body")[0].classList.remove("toggleBg");
-    }  
-});
+if(PressedOnce == false) { // This if does nothing atm, was an attempt to make it allowed for only one press on the "A" key.
+    document.addEventListener("keydown", function() { // Listens to a button press through the whole page
+        if(event.which == 67) { // If the button is C, do something
+            document.querySelector(".sec3").style.backgroundColor = "#eb1f1f"; // .sec3 gets the color red when c is pressed
+        }
+        else if(event.which == 66) { // B
+            document.querySelector(".sec3").style.backgroundColor = "#3ad31c";
+        }
+        else if(event.which == 65) { // Attempt for "A" button that changes colors automatically
+            thisfunc(); // Dont press "A" twice..
+            PressedOnce = true;
+        }
+        else {
+            document.querySelector(".sec3").style.backgroundColor = "#302e2e"; // Any other button is presed, return to normal
+        }  
+        if(event.which == 27) {
+            // alert("You pressed: esc");
+            clearInterval(ColorLoop);
+            document.getElementsByTagName("body")[0].classList.remove("toggleBg");
+            document.getElementsByTagName("section")[0].classList.remove("toggleBorder");
+    
+        }
+    });    
+} else if(PressedOnce == true) {
 
+}
 
-
-// Clicker game?
+// Clicker game!
 var Clicks = 0;
 var ButtonClicked = false;
 var UpgradeButton = document.querySelector(".UpgradeButton");
@@ -98,17 +105,20 @@ var ClickerWin = document.querySelector(".ClickerWin");
 do { // After Clicks is 10, a button will appear and if you click it, you get Clicks * 1000 // Kom på do whilen själv, kände mig ganska smart
     UpgradeButton.addEventListener("click", function() {
         ButtonClicked = true;
-        Clicks = Clicks - Clicks; // A small price to pay -Thanos
+        Clicks = Clicks - Clicks; // "A small price to pay" -Thanos
         document.querySelector(".Clicks").innerHTML = Clicks; // Updates Clicks in html
         UpgradeButton.style.visibility = "hidden";
         
     });
 } while(Clicks >= 10);
 
-ClickButton.addEventListener("click", function() { // Satt fast och kom på hela lösningen själv, kände mig ganska smart
-    if(ButtonClicked == true) {
+ClickButton.addEventListener("click", function() { // Satt fast här och kom sen på hela lösningen själv, kände mig ganska smart
+    if(ButtonClicked == true && Clicks >= 50000) {
+        document.querySelector(".addQuestionMark").innerHTML = "???"; 
+        Clicks = Clicks + 1000; 
+    } else if(ButtonClicked == true) {
+        document.querySelector(".addQuestionMark").innerHTML = "??";  
         Clicks = Clicks + 1000;  
-        document.querySelector(".addQuestionMark").innerHTML = "???";  
     } else
         Clicks++;
     
