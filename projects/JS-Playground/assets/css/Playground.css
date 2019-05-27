@@ -349,6 +349,10 @@ video {
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     }
 
+    section {
+        height: 400px;
+    }
+
     .slide-left {
         width: 40px;
     }
@@ -362,13 +366,27 @@ video {
     }
 
     .LittleImage {
-        height: 90%;
-        width: 50%;
+        width: 70%;
         margin-top: 15px; 
     }
 
+    .BigLightBox {
+        top: 70%;
+        height: 70%;
+        justify-content: center;
+    }
+    
+    .BIGme2 {
+        height: 100%;
+    }
+
+    .ClickerWin {
+        width: 100%;
+        height: 70%;
+    }
+
     .VideoTools {
-        top: 300%;
+        top: 400%;
         left: 5%;
         width: 60%;
     }
