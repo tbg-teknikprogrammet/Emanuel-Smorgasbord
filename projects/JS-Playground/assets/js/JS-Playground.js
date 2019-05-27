@@ -247,7 +247,7 @@ VolumeControll.addEventListener("click", function() {
     }
 });
 // Moving the video?
-function MovingVideo() {
+function MovingVideo() { // Does not work :(
     var position = 0;
     var AnimatedVideo = document.querySelector(".VideoPlayer");
     var Animation = setInterval(frame, 5);
