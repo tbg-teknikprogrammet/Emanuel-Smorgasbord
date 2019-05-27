@@ -386,9 +386,9 @@ video {
     }
 
     .VideoTools {
-        top: 400%;
-        left: 5%;
+        position: relative;
         width: 60%;
+        left: 0%;
     }
 
     .VideoTools button {
